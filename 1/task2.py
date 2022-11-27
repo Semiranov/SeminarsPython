@@ -5,5 +5,11 @@ for i in range(4):
     num = int(input('Введите число'))
     if num > max:
         max = num
-
 print(f' Максимальноя число равняется {max}')
+
+# sp = list()
+# for i in range(5):
+#     num = int(input('Введите число'))
+#     sp.append(num)
+# print(f' Максимальноя число равняется {max(sp)}')
+
