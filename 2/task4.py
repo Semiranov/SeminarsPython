@@ -6,8 +6,13 @@
 # else:
 #     print('Число не полиндром')
 
-num = input('Введите 5 знач число ')
-if num[0] == num[-1] and num[1] == num[-2]:
-    print('Число полиндром')
-else:
-    print('Число не полиндром')
+# num = input('Введите 5 знач число ')
+# if num[0] == num[-1] and num[1] == num[-2]:
+#     print('Число полиндром')
+# else:
+#     print('Число не полиндром')
+
+num = {1,2,3,4,5,4,3,2,1}
+for i in range(len(num) // 2):
+    if num[i] == num[-i+1]:
+        print('Palindrom')
