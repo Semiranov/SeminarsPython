@@ -12,7 +12,20 @@
 # else:
 #     print('Число не полиндром')
 
-num = {1,2,3,4,5,4,3,2,1}
-for i in range(len(num) // 2):
-    if num[i] == num[-i+1]:
-        print('Palindrom')
+# num = input('Введите число ')
+# f = 1
+# for i in range(len(num) // 2):
+#     if num[i] != num[-i-1]:
+#         print('Не палиндром')
+#         f = 0
+#         break
+# if f == 1:
+#     print('Палиндром')
+
+
+num = input('Введите число ') #разворот списка
+num2 = num[::-1]
+if num == num2:
+    print('Палиндром')
+else:
+    print('Не палиндром')
