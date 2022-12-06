@@ -10,3 +10,4 @@ for i in range(len(sp) // 2 + len(sp) % 2):
     pr = sp[i] * sp[-i-1]
     sp2.append(pr)
 print(sp2)
+

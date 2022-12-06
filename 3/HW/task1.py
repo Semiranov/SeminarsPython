@@ -10,5 +10,6 @@ print((summ))
 
 
 sp = [2, 3, 5, 9, 3] #через срез
-sp2 = sp[1:-1:2]
+sp2 = sp[1::2]
 print(sum(sp2))
+
