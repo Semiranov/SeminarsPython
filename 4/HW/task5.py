@@ -6,14 +6,14 @@ f2 = open('task5b.txt', 'r')
 mn2 = f2.read()
 f1.close()
 f2.close()
-print(mn1)
-print(mn2)
+print(f'многочлен в первом файле: {mn1}')
+print(f'многочлен во втором файле: {mn2}')
 
 def newsp(spIN): #функция удаления всего лишнего кроме многочленов
     spIN = list(spIN)
     spOUT = []
     i = 0
-    while i < len(spIN):
+    while i < len(spIN) - 1:
         if spIN[i] == 'x':
             i +=2
         elif spIN[i] == '+' or spIN[i] == ' ' or spIN[i] == '=' or spIN[i] == '-':
@@ -24,6 +24,20 @@ def newsp(spIN): #функция удаления всего лишнего кр
     return spOUT
 
 mn3 = newsp(mn1)
-print(mn3)
+print(f'список коэфицентов 1го многочлена: {mn3}')
 mn4 = newsp(mn2)
-print(mn4)
+print(f'список коэфицентов 2го многочлена: {mn4}')
+
+mn5 = []
+count = len(mn3) - 1
+for i in range(len(mn3)):  #формируем список с суммами
+    mn5.append(int(mn3[i]) + int(mn4[i]))
+    mn5.append(f'x{count} + ')
+    count -= 1
+del mn5[-1]
+mn5.append(' = 0')
+st = ''.join(map(str, mn5))
+
+f = open('task5c.txt', 'w') #Запись в файл
+f.write(st)
+f.close()
