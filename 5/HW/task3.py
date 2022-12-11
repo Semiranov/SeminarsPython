@@ -15,6 +15,10 @@ for k in range(9):
             pole[2][0] == pole[1][1] == pole[0][2] != '-'):
                 if pole[i][j] == 'x':
                     print('X победили!!!')
-                else: print('О победили!!!')
+                    break
+                else:
+                    print('О победили!!!')
+                    break
+
 
     print(*pole, sep='\n')
