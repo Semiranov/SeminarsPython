@@ -10,3 +10,5 @@ for i in sp:
         sp2.append(i)
 
 print(*sp2)
+
+
