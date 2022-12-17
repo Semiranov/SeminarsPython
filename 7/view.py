@@ -1,16 +1,20 @@
-def  greeting():
-    print('Hello! Выберите действие: 1 - калькулятор, 2 - конвертер')
-    select =  int(input())
+import controller
+
+
+def hello():
+    select = int(input('Привет: \n 1 - калькулятор \n 2 - конвертер'))
     return select
 
-def get_mat_example():
-    primer = input('Введите выражение')
+
+def kalc():
+    primer = input('Введите выражение: ')
     return primer
 
-def view_result(result):
-    print('Результат = ', result)
+
+def konverter():
+    kg = int(input('Введите килограммы: '))
+    return kg
 
 
-def get_massa():
-    massa = input('Введите массу в кг:')
-    return massa
+def printt(rez):
+    print(f'Результат равен {rez}')
