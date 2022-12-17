@@ -3,5 +3,6 @@
 # В качестве символа-разделителя используйте пробел.
 
 my_list = [int(i) for i in input('vvedi').split()]
+print(my_list)
 print('Максимум = ', max(my_list))
 print('Минимум = ', min(my_list))
