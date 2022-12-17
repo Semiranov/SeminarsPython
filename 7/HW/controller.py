@@ -17,3 +17,4 @@ def main_function():
     elif num == 4:
         sp = model.import_csv(sprav2)
         view.print_import(sp)
+    else: print('ERROR')
