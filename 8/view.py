@@ -10,7 +10,18 @@ def welcome_function():
 def printing(sp):
     print('Список всех сотрудников:')
     for i, st in enumerate(sp):
-        print(i,*st)
+        if i == 0:
+            print(' ', *st)
+        else:
+            print(i, *st)
+
+
+def new_printing(sp):
+    print('Обновленный список сотрудников:')
+    for i, st in enumerate(sp):
+        if i == 0:
+            print(' ',*st)
+        else: print(i,*st)
 
 
 def add_in():
@@ -21,8 +32,19 @@ def add_in():
 def change_worker(sp):
     print('Введите номер сотрудника, которому нужно изменить данные: ')
     for i, st in enumerate(sp):
-        print(i, *st)
+        if i == 0:
+            print(' ', *st)
+        else: print(i, *st)
     num = int(input())
     return num
 
+
+def del_worker(sp):
+    print('Введите номер сотрудника, которого нужно удалить: ')
+    for i, st in enumerate(sp):
+        if i == 0:
+            print(' ', *st)
+        else: print(i, *st)
+    num = int(input())
+    return num
 
