@@ -11,4 +11,6 @@ def main_function():
         model.add_worker(worker)
     elif enter == 3:
         all_sp = model.print_all_worcers()
-        view.change_worker(all_sp)
+        num = view.change_worker(all_sp)
+        change = view.add_in()
+        model.change_data(num,change)
