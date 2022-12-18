@@ -1,4 +1,4 @@
-import csv
+import csv, logging
 
 
 def print_all_worcers():
@@ -6,13 +6,14 @@ def print_all_worcers():
         file_reader = csv.reader(file, delimiter=';')
         return list(file_reader)
 
+
 def add_worker(sp):
-    with open('data.csv',"a", encoding='utf-8', newline='') as file:
+    with open('data.csv', "a", encoding='utf-8', newline='') as file:
         file_writer = csv.writer(file, delimiter=";")
         file_writer.writerow(sp)
 
 
-def change_data(num,sp):
+def change_data(num, sp):
     try:
         with open('data.csv', 'r', encoding='utf-8') as file:
             file_reader = list(csv.reader(file, delimiter=';'))
@@ -23,9 +24,11 @@ def change_data(num,sp):
                 file_writer.writerow(i)
     except IndexError:
         print('Вышли за границы массива')
+        logging.info('Вышли за границы массива')
         exit()
     except Exception:
-        print('Ошибка')
+        print('Ошибка файла')
+        logging.info('Ошибка файла')
         exit()
 
 
@@ -38,3 +41,11 @@ def dell_data(num):
         for i in file_reader:
             file_writer.writerow(i)
 
+
+def export_txt():
+    with open('data.csv', 'r', encoding='utf-8') as file:
+        reader = list(csv.reader(file, delimiter=';'))
+    with open('data.txt', 'w', encoding='utf-8') as file:
+        for i in reader:
+            file.write(';'.join(i))
+            file.write('\n')
