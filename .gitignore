@@ -138,3 +138,4 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+!/9/tele_token.py
