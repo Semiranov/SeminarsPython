@@ -137,7 +137,5 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-
-!/9/tele_token.py
-tele_token.py
-/9/tele_token.py
+/9/telegram_token.py
+/8/log.txt

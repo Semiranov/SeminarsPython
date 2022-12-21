@@ -1,5 +1,5 @@
 import logging
-from tele_token import token1
+from telegram_token import token1
 
 from telegram.ext import Updater, CommandHandler, ConversationHandler, MessageHandler, Filters
 
