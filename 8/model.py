@@ -1,10 +1,19 @@
 import csv, logging
+import sqlite3
 
+conn = sqlite3.connect('workers.db')
+cursor = conn.cursor()
+
+
+# def print_all_worcers():
+#     with open('data.csv', 'r', encoding='utf-8') as file:
+#         file_reader = csv.reader(file, delimiter=';')
+#         return list(file_reader)
 
 def print_all_worcers():
-    with open('data.csv', 'r', encoding='utf-8') as file:
-        file_reader = csv.reader(file, delimiter=';')
-        return list(file_reader)
+    cursor.execute('select * from workers')
+    rezults = cursor.fetchall()
+    print(rezults)
 
 
 def add_worker(sp):
