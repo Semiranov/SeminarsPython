@@ -7,7 +7,7 @@ def start(update, context):
         'Привет, что будем делать? \n'
         '/view - отобразить список всех сотрудников \n'
         '/add - добавить сотрудника \n'
-        # '/change - изменить данные сотрудника \n'
+        '/change - изменить данные сотрудника \n'
         '/dell - удалить сотрудника \n'
         "Вы можете прервать опрос, послав команду /stop.\n")
 
@@ -54,9 +54,6 @@ def add_posicion(update, contex):
     conn.close()
 
 
-# def change(update, context):
-
-
 def dell(update, context):
     update.message.reply_text('Введите id который нужно удалить')
     return 1
@@ -69,6 +66,56 @@ def delete(update, context):
     cursor.execute(f"delete from workers where id={id_dell}")
     conn.commit()
     conn.close()
+
+
+def change(update, context):
+    update.message.reply_text("Введите id сотрудника которого нужно изменить:")
+    return 1
+
+
+def change_id(update, context):
+    global num_id
+    num_id = update.message.text
+    update.message.reply_text("Введите новое имя:")
+    return 2
+
+
+def change_name(update, context):
+    name = update.message.text
+    conn = sqlite3.connect('Peoples.db')
+    cursor = conn.cursor()
+    cursor.execute(
+        f"update workers set name='{name}' where id={num_id} "
+    )
+    conn.commit()
+    conn.close()
+    update.message.reply_text("Введите новый телефон:")
+    return 3
+
+
+def change_tel(update, context):
+    tel = update.message.text
+    conn = sqlite3.connect('Peoples.db')
+    cursor = conn.cursor()
+    cursor.execute(
+        f"update workers set phone='{tel}' where id={num_id} "
+    )
+    conn.commit()
+    conn.close()
+    update.message.reply_text("Введите новую должность:")
+    return 4
+
+
+def change_pos(update, context):
+    pos = update.message.text
+    conn = sqlite3.connect('Peoples.db')
+    cursor = conn.cursor()
+    cursor.execute(
+        f"update workers set position='{pos}' where id={num_id} "
+    )
+    conn.commit()
+    conn.close()
+    return
 
 
 def stop(update, context):
